@@ -11,4 +11,73 @@ public class SpawnManager : MonoBehaviour
     private float LR = -1.35f;
     private float RL = 1.35f;
     private float RR = 4.05f;
+
+    /// <summary>
+    /// automatically start when run in unity
+    /// </summary>
+    private void Start()
+    {
+        StartSpawn();
+    }
+
+    // startSpawn method to start spawn
+    private void StartSpawn()
+    {
+        StartCoroutine(SpawnRedObstacles());
+        StartCoroutine(SpawnBlueObstacles());
+    }
+
+    // generate obstacle for red truck
+    IEnumerator SpawnRedObstacles()
+    {
+        yield return new WaitForSeconds(Random.Range(0, 1f));
+
+        while (true)
+        {
+            // decide which item to be spawned as obstacle
+            int type = Random.Range(0, 2);
+
+            // decide which lane to spawn
+            int lane = Random.Range(0, 2);
+
+            float positionX;
+            positionX = lane == 0 ? LL : LR;
+
+            // Instantiate obstacles
+            GameObject item = Instantiate(redObstacles[type], new Vector3(positionX, 10.5f, 0), Quaternion.identity) as GameObject;
+
+            // make child of spawn manager
+            item.transform.SetParent(transform); // transform refers SpawnManager
+
+            yield return new WaitForSeconds(GameManager.Instance.spawnTimeInterval);
+        }
+        yield break;
+    }
+
+    // generate obstacle for blue truck
+    IEnumerator SpawnBlueObstacles()
+    {
+        yield return new WaitForSeconds(Random.Range(0, 1f));
+
+        while (true)
+        {
+            // decide which item to be spawned as obstacle
+            int type = Random.Range(0, 2);
+
+            // decide which lane to spawn
+            int lane = Random.Range(0, 2);
+
+            float positionX;
+            positionX = lane == 0 ? RL : RR;
+
+            // Instantiate obstacles
+            GameObject item = Instantiate(blueObstacles[type], new Vector3(positionX, 10.5f, 0), Quaternion.identity) as GameObject;
+
+            // make child of spawn manager
+            item.transform.SetParent(transform); // transform refers SpawnManager
+
+            yield return new WaitForSeconds(GameManager.Instance.spawnTimeInterval);
+        }
+        yield break;
+    }
 }
