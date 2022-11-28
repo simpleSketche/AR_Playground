@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLane: {x: 1.35, y: -6, z: 0}
   rightLane: {x: 4.05, y: -6, z: 0}
+  leftRotation: {x: 0, y: 0, z: 25}
+  rightRotation: {x: 0, y: 0, z: 325}
   smoothness: 20
 --- !u!1 &519420028
 GameObject:
@@ -406,6 +408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLane: {x: -4.05, y: -6, z: 0}
   rightLane: {x: -1.35, y: -6, z: 0}
+  leftRotation: {x: 0, y: 0, z: 25}
+  rightRotation: {x: 0, y: 0, z: 325}
   smoothness: 20
 --- !u!1 &1068412753
 GameObject:
