@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197017004}
   - component: {fileID: 197017003}
+  - component: {fileID: 197017005}
   m_Layer: 0
   m_Name: TruckBlue
   m_TagString: Untagged
@@ -207,6 +208,21 @@ Transform:
   m_Father: {fileID: 2126016283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197017005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197017002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0ad3de5786cb24499bc5283e95e698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLane: {x: 1.35, y: -6, z: 0}
+  rightLane: {x: 4.05, y: -6, z: 0}
+  smoothness: 20
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664805982}
   - component: {fileID: 664805981}
+  - component: {fileID: 664805983}
   m_Layer: 0
   m_Name: TruckRed
   m_TagString: Untagged
@@ -375,6 +392,21 @@ Transform:
   m_Father: {fileID: 2126016283}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664805983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664805980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0ad3de5786cb24499bc5283e95e698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLane: {x: -4.05, y: -6, z: 0}
+  rightLane: {x: -1.35, y: -6, z: 0}
+  smoothness: 20
 --- !u!1 &1068412753
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,3 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e5c5d828bd2904ab3603aa972bceb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputMethod: 0
+  redTruck: {fileID: 664805983}
+  blueTruck: {fileID: 197017005}
