@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7353437539258695870}
   - component: {fileID: 1284525216073790065}
   - component: {fileID: 5039550095495031755}
+  - component: {fileID: 1324328854}
+  - component: {fileID: 1324328853}
   m_Layer: 0
   m_Name: ObstacleRed
   m_TagString: Untagged
@@ -97,3 +99,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c308528f3d83bf4f88a19cd3c6c35c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
+--- !u!60 &1324328854
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286819000970587008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.59, y: 1.33}
+    newSize: {x: 1.59, y: 1.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.715, y: -0.385}
+      - {x: 0.575, y: -0.16499999}
+      - {x: 0.095, y: 0.635}
+      - {x: 0.055, y: 0.66499996}
+      - {x: -0.065, y: 0.66499996}
+      - {x: -0.095, y: 0.625}
+      - {x: -0.125, y: 0.575}
+      - {x: -0.205, y: 0.435}
+      - {x: -0.235, y: 0.39499998}
+      - {x: -0.435, y: 0.085}
+      - {x: -0.79499996, y: -0.525}
+      - {x: -0.79499996, y: -0.615}
+      - {x: -0.745, y: -0.655}
+      - {x: 0.72499996, y: -0.655}
+      - {x: 0.78499997, y: -0.615}
+      - {x: 0.79499996, y: -0.585}
+      - {x: 0.79499996, y: -0.53499997}
+--- !u!50 &1324328853
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286819000970587008}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 5

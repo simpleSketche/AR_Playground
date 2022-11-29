@@ -17,14 +17,20 @@ public class SpawnManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        StartSpawn();
+        
     }
 
     // startSpawn method to start spawn
-    private void StartSpawn()
+    public void StartSpawn()
     {
         StartCoroutine(SpawnRedObstacles());
         StartCoroutine(SpawnBlueObstacles());
+    }
+
+    public void StopSpawn()
+    {
+        // stops all corountines running on this gameobject
+        StopAllCoroutines();
     }
 
     // generate obstacle for red truck
@@ -32,7 +38,7 @@ public class SpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0, 1f));
 
-        while (true)
+        while (GameManager.Instance.IsGameActive)
         {
             // decide which item to be spawned as obstacle
             int type = Random.Range(0, 2);
@@ -59,7 +65,7 @@ public class SpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0, 1f));
 
-        while (true)
+        while (GameManager.Instance.IsGameActive)
         {
             // decide which item to be spawned as obstacle
             int type = Random.Range(0, 2);
