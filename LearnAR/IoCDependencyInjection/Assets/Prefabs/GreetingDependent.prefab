@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1e5f65dc05e7147a3d4dddfdc07b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenMessage: 1
+  timeBetweenMessage: 0.25
 --- !u!222 &5837156478013299778
 CanvasRenderer:
   m_ObjectHideFlags: 0

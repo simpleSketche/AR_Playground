@@ -3,9 +3,8 @@ using Zenject;
 
 public class GreeterInstaller : MonoInstaller<GreeterInstaller>
 {
-    // reference the game prefab directly here
-    // since the script is in monobehaviours, so we can reference directly
-    public GreetingConsumer greetingConsumerPrefab;
+    [Inject]
+    GameSettings settings;
 
     public override void InstallBindings()
     {
@@ -18,6 +17,6 @@ public class GreeterInstaller : MonoInstaller<GreeterInstaller>
         //Container.Bind<IGreeter>().To<Greeter>().AsTransient();
 
         // binding the factory to the container, specifying the output object type and the factory to produce the object
-        Container.BindFactory<GreetingConsumer, Factory>().FromComponentInNewPrefab(greetingConsumerPrefab);
+        Container.BindFactory<GreetingConsumer, Factory>().FromComponentInNewPrefab(settings.greetingConsumerPrefab);
     }
 }

@@ -6,7 +6,7 @@ using Zenject;
 public class GreetingConsumer : MonoBehaviour
 {
     private IGreeter _greeter;
-    public float timeBetweenMessage = 1.0f;
+    private float timeBetweenMessage = 1.0f;
     private float timeSinceMessage = 0;
     
     /// <summary>
