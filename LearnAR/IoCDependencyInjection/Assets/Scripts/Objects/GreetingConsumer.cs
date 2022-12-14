@@ -6,6 +6,8 @@ using Zenject;
 public class GreetingConsumer : MonoBehaviour
 {
     private IGreeter _greeter;
+    public float timeBetweenMessage = 1.0f;
+    private float timeSinceMessage = 0;
     
     /// <summary>
     /// Start is basically the MonoBehaviour constructor, inject the interface here so that every newly created game object
@@ -13,13 +15,18 @@ public class GreetingConsumer : MonoBehaviour
     /// </summary>
     /// <param name="greeter"></param>
     [Inject]
-    public void Start(IGreeter greeter)
+    public void Construct(IGreeter greeter)
     {
         _greeter = greeter;
     }
 
     private void Update()
     {
-        Debug.Log(_greeter.Message);
+        timeSinceMessage += Time.deltaTime;
+        if(timeSinceMessage > timeBetweenMessage)
+        {
+            Debug.Log(_greeter.Message);
+            timeSinceMessage = 0;
+        }
     }
 }
